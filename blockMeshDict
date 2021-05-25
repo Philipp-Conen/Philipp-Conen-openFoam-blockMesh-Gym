@@ -3,7 +3,7 @@
   \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
    \\    /   O peration     | Website:  https://openfoam.org
     \\  /    A nd           | Version:  7
-     \\/     M anipulation  |
+     \\/     M anipulation  | Author: 	Philipp Conen
 \*---------------------------------------------------------------------------*/
 FoamFile
 {
@@ -23,6 +23,7 @@ FoamFile
 	
 	doorWidth 1;
 	doorHeight 2;
+	wallDoorDistance 5;
 	
 	x0 0;
 	x1 #calc " ($gymWidth - $doorWidth) / 2 ";
@@ -34,8 +35,8 @@ FoamFile
 	y2 #calc " $gymHeight ";
 	
 	z0 0;
-	z1 #calc " 2 * $dx + $doorWidth ";
-	z2 #calc " 2 * $dx + $doorWidth ";
+	z1 " $wallDoorDistance ";
+	z2 #calc " $z1 + $doorWidth ";
 	z3 #calc " $gymDeeps ";
 	
 	//---------------------------------
@@ -55,7 +56,7 @@ FoamFile
 	
 	cellsZ01 #calc " ($z1 - $z0) * scaleZ ";
 	cellsZ12 #calc " ($z2 - $z1) * scaleZ ";
-	cellsZ13 #calc " ($z3 - $z2) * scaleZ "; 
+	cellsZ23 #calc " ($z3 - $z2) * scaleZ "; 
 	
     vertices
     (
@@ -170,27 +171,27 @@ FoamFile
         
     	// Block 12
         hex ( 24 25 29 28 36 37 41 40 )    // vertex numbers
-        ( cellsX01 cellsY01 cellsZ12 )	// numbers of cells in each direction
+        ( cellsX01 cellsY01 cellsZ23 )	// numbers of cells in each direction
         simpleGrading ( 1 1 1 )    // cell expansion ratios
     	// Block 13
         hex ( 25 26 30 29 37 28 42 41 )    // vertex numbers
-        ( cellsX12 cellsY01 cellsZ12 )	// numbers of cells in each direction
+        ( cellsX12 cellsY01 cellsZ23 )	// numbers of cells in each direction
         simpleGrading ( 1 1 1 )    // cell expansion ratios
     	// Block 14
         hex ( 26 27 31 30 38 39 43 42 )    // vertex numbers
-        ( cellsX23 cellsY01 cellsZ12 )	// numbers of cells in each direction
+        ( cellsX23 cellsY01 cellsZ23 )	// numbers of cells in each direction
         simpleGrading ( 1 1 1 )    // cell expansion ratios
     	// Block 15
         hex ( 28 29 33 32 40 41 45 44 )    // vertex numbers
-        ( cellsX01 cellsY12 cellsZ12 )	// numbers of cells in each direction
+        ( cellsX01 cellsY12 cellsZ23 )	// numbers of cells in each direction
         simpleGrading ( 1 1 1 )    // cell expansion ratios
     	// Block 16
         hex ( 29 30 34 33 41 42 46 45 )    // vertex numbers
-        ( cellsX12 cellsY12 cellsZ12 )	// numbers of cells in each direction
+        ( cellsX12 cellsY12 cellsZ23 )	// numbers of cells in each direction
         simpleGrading ( 1 1 1 )    // cell expansion ratios
     	// Block 17
         hex ( 30 31 35 34 42 43 47 46 )    // vertex numbers
-        ( cellsX23 cellsY12 cellsZ12 )	// numbers of cells in each direction
+        ( cellsX23 cellsY12 cellsZ23 )	// numbers of cells in each direction
         simpleGrading ( 1 1 1 )    // cell expansion ratios
     );
 

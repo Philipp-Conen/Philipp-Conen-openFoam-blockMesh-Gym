@@ -47,16 +47,16 @@ FoamFile
 	
 	//---------------------------------
 	
-	cellsX01 #calc " ($x1 - $x0) * scaleX ";
-	cellsX12 #calc " ($x2 - $x1) * scaleX ";
-	cellsX23 #calc " ($x3 - $x2) * scaleX ";
+	cellsX01 #calc " ($x1 - $x0) * $scaleX ";
+	cellsX12 #calc " ($x2 - $x1) * $scaleX ";
+	cellsX23 #calc " ($x3 - $x2) * $scaleX ";
 	
-	cellsY01 #calc " ($y1 - $y0) * scaleY ";
-	cellsY12 #calc " ($y2 - $y1) * scaleY ";
+	cellsY01 #calc " ($y1 - $y0) * $scaleY ";
+	cellsY12 #calc " ($y2 - $y1) * $scaleY ";
 	
-	cellsZ01 #calc " ($z1 - $z0) * scaleZ ";
-	cellsZ12 #calc " ($z2 - $z1) * scaleZ ";
-	cellsZ23 #calc " ($z3 - $z2) * scaleZ "; 
+	cellsZ01 #calc " ($z1 - $z0) * $scaleZ ";
+	cellsZ12 #calc " ($z2 - $z1) * $scaleZ ";
+	cellsZ23 #calc " ($z3 - $z2) * $scaleZ "; 
 	
     vertices
     (
@@ -117,81 +117,81 @@ FoamFile
     (
     	// Block 0
         hex ( 0 1 5 4 12 13 17 16 )    // vertex numbers
-        ( cellsX01 cellsY01 cellsZ01 )	// numbers of cells in each direction
+        ( $cellsX01 $cellsY01 $cellsZ01 )	// numbers of cells in each direction
         simpleGrading ( 1 1 1 )    // cell expansion ratios
     	// Block 1
         hex ( 1 2 6 5 13 14 18 17 )    // vertex numbers
-        ( cellsX12 cellsY01 cellsZ01 )	// numbers of cells in each direction
+        ( $cellsX12 $cellsY01 $cellsZ01 )	// numbers of cells in each direction
         simpleGrading ( 1 1 1 )    // cell expansion ratios
     	// Block 2
         hex ( 2 3 7 6 14 15 19 18 )    // vertex numbers
-        ( cellsX23 cellsY01 cellsZ01 )	// numbers of cells in each direction
+        ( $cellsX23 $cellsY01 $cellsZ01 )	// numbers of cells in each direction
         simpleGrading ( 1 1 1 )    // cell expansion ratios
     	// Block 3
         hex ( 4 5 9 8 16 17 21 20 )    // vertex numbers
-        ( cellsX01 cellsY12 cellsZ01 )	// numbers of cells in each direction
+        ( $cellsX01 $cellsY12 $cellsZ01 )	// numbers of cells in each direction
         simpleGrading ( 1 1 1 )    // cell expansion ratios
     	// Block 4
         hex ( 5 6 10 9 17 18 22 21 )    // vertex numbers
-        ( cellsX12 cellsY12 cellsZ01 )	// numbers of cells in each direction
+        ( $cellsX12 $cellsY12 $cellsZ01 )	// numbers of cells in each direction
         simpleGrading ( 1 1 1 )    // cell expansion ratios
     	// Block 5
         hex ( 6 7 11 10 18 19 23 22 )    // vertex numbers
-        ( cellsX23 cellsY12 cellsZ01 )	// numbers of cells in each direction
+        ( $cellsX23 $cellsY12 $cellsZ01 )	// numbers of cells in each direction
         simpleGrading ( 1 1 1 )    // cell expansion ratios
         
         //---------
         
     	// Block 6
         hex ( 12 13 17 16 24 25 29 28 )    // vertex numbers
-        ( cellsX01 cellsY01 cellsZ12 )	// numbers of cells in each direction
+        ( $cellsX01 $cellsY01 $cellsZ12 )	// numbers of cells in each direction
         simpleGrading ( 1 1 1 )    // cell expansion ratios
     	// Block 7
         hex ( 13 14 18 17 25 26 30 29 )    // vertex numbers
-        ( cellsX12 cellsY01 cellsZ12 )	// numbers of cells in each direction
+        ( $cellsX12 $cellsY01 $cellsZ12 )	// numbers of cells in each direction
         simpleGrading ( 1 1 1 )    // cell expansion ratios
     	// Block 8
         hex ( 14 15 19 18 26 27 31 30 )    // vertex numbers
-        ( cellsX23 cellsY01 cellsZ12 )	// numbers of cells in each direction
+        ( $cellsX23 $cellsY01 $cellsZ12 )	// numbers of cells in each direction
         simpleGrading ( 1 1 1 )    // cell expansion ratios
     	// Block 9
         hex ( 16 17 21 20 28 29 33 32 )    // vertex numbers
-        ( cellsX01 cellsY12 cellsZ12 )	// numbers of cells in each direction
+        ( $cellsX01 $cellsY12 $cellsZ12 )	// numbers of cells in each direction
         simpleGrading ( 1 1 1 )    // cell expansion ratios
     	// Block 10
         hex ( 17 18 22 21 29 30 34 33 )    // vertex numbers
-        ( cellsX12 cellsY12 cellsZ12 )	// numbers of cells in each direction
+        ( $cellsX12 $cellsY12 $cellsZ12 )	// numbers of cells in each direction
         simpleGrading ( 1 1 1 )    // cell expansion ratios
     	// Block 11
         hex ( 18 19 23 22 30 31 35 34 )    // vertex numbers
-        ( cellsX23 cellsY12 cellsZ12 )	// numbers of cells in each direction
+        ( $cellsX23 $cellsY12 $cellsZ12 )	// numbers of cells in each direction
         simpleGrading ( 1 1 1 )    // cell expansion ratios
         
         //---------
         
     	// Block 12
         hex ( 24 25 29 28 36 37 41 40 )    // vertex numbers
-        ( cellsX01 cellsY01 cellsZ23 )	// numbers of cells in each direction
+        ( $cellsX01 $cellsY01 $cellsZ23 )	// numbers of cells in each direction
         simpleGrading ( 1 1 1 )    // cell expansion ratios
     	// Block 13
         hex ( 25 26 30 29 37 28 42 41 )    // vertex numbers
-        ( cellsX12 cellsY01 cellsZ23 )	// numbers of cells in each direction
+        ( $cellsX12 $cellsY01 $cellsZ23 )	// numbers of cells in each direction
         simpleGrading ( 1 1 1 )    // cell expansion ratios
     	// Block 14
         hex ( 26 27 31 30 38 39 43 42 )    // vertex numbers
-        ( cellsX23 cellsY01 cellsZ23 )	// numbers of cells in each direction
+        ( $cellsX23 $cellsY01 $cellsZ23 )	// numbers of cells in each direction
         simpleGrading ( 1 1 1 )    // cell expansion ratios
     	// Block 15
         hex ( 28 29 33 32 40 41 45 44 )    // vertex numbers
-        ( cellsX01 cellsY12 cellsZ23 )	// numbers of cells in each direction
+        ( $cellsX01 $cellsY12 $cellsZ23 )	// numbers of cells in each direction
         simpleGrading ( 1 1 1 )    // cell expansion ratios
     	// Block 16
         hex ( 29 30 34 33 41 42 46 45 )    // vertex numbers
-        ( cellsX12 cellsY12 cellsZ23 )	// numbers of cells in each direction
+        ( $cellsX12 $cellsY12 $cellsZ23 )	// numbers of cells in each direction
         simpleGrading ( 1 1 1 )    // cell expansion ratios
     	// Block 17
         hex ( 30 31 35 34 42 43 47 46 )    // vertex numbers
-        ( cellsX23 cellsY12 cellsZ23 )	// numbers of cells in each direction
+        ( $cellsX23 $cellsY12 $cellsZ23 )	// numbers of cells in each direction
         simpleGrading ( 1 1 1 )    // cell expansion ratios
     );
 

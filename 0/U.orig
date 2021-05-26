@@ -20,30 +20,52 @@ internalField   uniform (0 0 0);
 
 boundaryField
 {
-    inlet
+
+    leftDoor
     {
         type            fixedValue;
         value           uniform (10 0 0);
     }
 
-    outlet
+    midDoor
+    {
+        type            fixedValue;
+        value           uniform (10 0 0);
+    }
+
+    rightDoor
     {
         type            zeroGradient;
     }
 
-    upperWall
+    front
     {
-        type            noSlip;
+        type            zeroGradient;
     }
 
-    lowerWall
+    back
     {
-        type            noSlip;
+        type            zeroGradient;
     }
 
-    frontAndBack
+    left
     {
-        type            empty;
+        type            zeroGradient;
+    }
+
+    right
+    {
+        type            zeroGradient;
+    }
+
+    top
+    {
+        type            zeroGradient;
+    }
+
+    bot
+    {
+        type            zeroGradient;
     }
 }
 
